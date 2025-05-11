@@ -1,39 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment Plan</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tailor Shop - Custom Dress Designs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
 </head>
 <body>
-    <div class="form-container">
-        <div class="frame">
-            <form action="" method="POST">
-                <div class="form-group">
-                    <label for="plan_name">Plan Name:</label>
-                    <input type="text" id="plan_name" name="plan_name"  placeholder="Enter plan name">
-                </div>
+    <header>
+        <nav>
+            <div class="logo">Tailor Shop</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#designs">Designs</a></li>
+            <!---    <li><a href="#contact">Contact</a></li> --->
+            </ul>
+        </nav>
+    </header>
 
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name"  placeholder="Enter your name">
-                </div>
+    <main>
+        <section id="home" class="hero">
+            <h1>Custom Dress Designs</h1>
+            <p>Explore our collection and visualize your perfect dress</p>
+        </section>
 
-                <div class="form-group">
-                    <label for="partner_name">Partner Name (if available):</label>
-                    <input type="text" id="partner_name" name="partner_name" placeholder="Enter partner's name">
+        <section id="designs" class="designs-section">
+            <h2>Our Designs</h2>
+            <div class="designs-container">
+                <div class="designs-grid">
+                    <!-- Design cards will be added dynamically -->
                 </div>
-
-                <div class="form-group">
-                    <label for="target_amount">Target Investment Amount:</label>
-                    <input type="number" id="target_amount" name="target_amount" required min="0" step="0.01" placeholder="Enter target amount">
+                <div class="preview-container">
+                    <div id="model-viewer"></div>
+                    <div class="controls">
+                        <button id="rotate-left">←</button>
+                        <button id="rotate-right">→</button>
+                    </div>
                 </div>
-
-                <button type="submit">Submit</button>
-            </form>
+            </div>
+        </section>
+   <!--- <section id="contact" class="contact-section">
+        <h2>
+            <span style="vertical-align: middle;">
+                <svg width="36" height="36" fill="#fff" viewBox="0 0 24 24" style="margin-right:10px;vertical-align:middle;">
+                    <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 13l8-8.99V4H4zm16 2.41l-7.29 7.3a1 1 0 0 1-1.42 0L4 6.41V20h16V6.41z"/>
+                </svg>
+                Contact Us
+            </span>
+        </h2>
+         <div class="contact-container">
+            <div class="contact-info">
+             <h3>Get in Touch</h3>
+                <p>Have questions about our designs or want to discuss a custom order?</p>
+                <div class="info-item">
+                    <strong>Phone:</strong>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="info-item">
+                    <strong>Address:</strong>
+                    <p>123 Fashion Street<br>Design District<br>New York, NY 10001</p>
+                </div>
+            </div>
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps?q=123+Fashion+Street,+New+York,+NY+10001&output=embed"
+                    width="100%" height="250" style="border:0; border-radius:12px; margin-top:1.5rem;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
-    </div>
+    </section>---> 
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tailor Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wheelzoom@4.0.1/wheelzoom.min.js"></script>
 </body>
-</html>
+</html> 

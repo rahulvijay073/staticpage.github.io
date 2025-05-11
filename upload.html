@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload New Dress Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Upload New Dress Design</h2>
+        <form class="upload-form" id="uploadForm">
+            <label for="dressName">Dress Name</label>
+            <input type="text" id="dressName" name="dressName" required>
+
+            <label for="dressCategory">Category</label>
+            <select id="dressCategory" name="dressCategory" required>
+                <option value="Party">Party</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Casual">Casual</option>
+                <option value="Nighty">Nighty</option>
+                <option value="Tshirt">Tshirt</option>
+            </select>
+
+            <label for="dressImages">Dress Images (multiple angles)</label>
+            <input type="file" id="dressImages" name="dressImages" accept="image/*" multiple required>
+
+            <div class="preview-images" id="previewImages"></div>
+
+            <button type="submit">Upload Dress</button>
+            <div class="success-message" id="successMessage"></div>
+        </form>
+    </div>
+    <script>
+    // Preview selected images
+    document.getElementById('dressImages').addEventListener('change', function(e) {
+        const preview = document.getElementById('previewImages');
+        preview.innerHTML = '';
+        Array.from(e.target.files).forEach(file => {
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                const img = document.createElement('img');
+                img.src = evt.target.result;
+                preview.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        });
+    });
+
+    // Handle form submission (demo: just show success message)
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('successMessage').textContent = 'Dress uploaded successfully! (Demo only, not saved)';
+        this.reset();
+        document.getElementById('previewImages').innerHTML = '';
+        setTimeout(() => {
+            document.getElementById('successMessage').textContent = '';
+        }, 2500);
+    });
+    </script>
+</body>
+</html> 
